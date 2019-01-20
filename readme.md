@@ -35,13 +35,15 @@ Editor.
             updateSpec: function(oriAction) {
               return function(spec) {
                 var url = getParameterByName('url');
-                var xhr = new XMLHttpRequest();
-                xhr.open('PUT', url, false);
-                xhr.send(spec);
+                if (url) {
+                  var xhr = new XMLHttpRequest();
+                  xhr.open('PUT', url, false);
+                  xhr.send(spec);
 
-                if (xhr.status < 200 || xhr.status >= 300) {
-                  alert('There was an error saving the swagger file');
-                  console.log( xhr.status + ': ' + xhr.statusText );
+                  if (xhr.status < 200 || xhr.status >= 300) {
+                    alert('There was an error saving the swagger file');
+                    console.log( xhr.status + ': ' + xhr.statusText );
+                  }
                 }
                 return oriAction(spec);
               };
