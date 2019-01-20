@@ -1,0 +1,15 @@
+{
+  "name": "swagger-editor-server",
+  "version": "0.1.0",
+  "description": "Swagger Editor Server REST API",
+  "main": "app.js",
+  "license": "GPL-3.0",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Stephen Harris",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
